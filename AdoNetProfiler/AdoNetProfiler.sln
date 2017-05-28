@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhDataProfiler", "main\NhDa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_DDL", "_DDL", "{056C9AA1-839C-4321-B523-702C4E35D2F3}"
 	ProjectSection(SolutionItems) = preProject
-		NorthWind_Oracle.sql = NorthWind_Oracle.sql
+		DDL\NorthWind_Oracle.sql = DDL\NorthWind_Oracle.sql
 	EndProjectSection
 EndProject
 Global
