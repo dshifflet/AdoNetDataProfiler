@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{A2F0C790-5844-432B-A60A-042CFBA0F714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProfiler", "main\DataProfiler\DataProfiler.csproj", "{3B6CA593-1583-484B-BA16-0B2473443BBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3FD1F500-64C7-4D1F-89A2-3FC6C83DD8C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProfilerTests", "tests\DataProfilerTests\DataProfilerTests.csproj", "{575B5ED7-8C4E-4EC4-82C0-406D8CB54E50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateTests", "tests\NHibernateTests\NHibernateTests.csproj", "{D803D835-8D13-4B0A-9F44-DABBB7D11864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhDataProfiler", "main\NhDataProfiler\NhDataProfiler.csproj", "{B7D5BC13-72C2-44CE-BEF6-92DD4589554C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_DDL", "_DDL", "{056C9AA1-839C-4321-B523-702C4E35D2F3}"
+	ProjectSection(SolutionItems) = preProject
+		NorthWind_Oracle.sql = NorthWind_Oracle.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B6CA593-1583-484B-BA16-0B2473443BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6CA593-1583-484B-BA16-0B2473443BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6CA593-1583-484B-BA16-0B2473443BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6CA593-1583-484B-BA16-0B2473443BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{575B5ED7-8C4E-4EC4-82C0-406D8CB54E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575B5ED7-8C4E-4EC4-82C0-406D8CB54E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575B5ED7-8C4E-4EC4-82C0-406D8CB54E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575B5ED7-8C4E-4EC4-82C0-406D8CB54E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D803D835-8D13-4B0A-9F44-DABBB7D11864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D803D835-8D13-4B0A-9F44-DABBB7D11864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D803D835-8D13-4B0A-9F44-DABBB7D11864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D803D835-8D13-4B0A-9F44-DABBB7D11864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D5BC13-72C2-44CE-BEF6-92DD4589554C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D5BC13-72C2-44CE-BEF6-92DD4589554C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D5BC13-72C2-44CE-BEF6-92DD4589554C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D5BC13-72C2-44CE-BEF6-92DD4589554C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B6CA593-1583-484B-BA16-0B2473443BBF} = {A2F0C790-5844-432B-A60A-042CFBA0F714}
+		{B7D5BC13-72C2-44CE-BEF6-92DD4589554C} = {A2F0C790-5844-432B-A60A-042CFBA0F714}
+		{575B5ED7-8C4E-4EC4-82C0-406D8CB54E50} = {3FD1F500-64C7-4D1F-89A2-3FC6C83DD8C2}
+		{D803D835-8D13-4B0A-9F44-DABBB7D11864} = {3FD1F500-64C7-4D1F-89A2-3FC6C83DD8C2}
+	EndGlobalSection
+EndGlobal
