@@ -1,5 +1,4 @@
 using System.IO;
-using System.Net.NetworkInformation;
 
 namespace DataProfiler
 {
@@ -8,7 +7,7 @@ namespace DataProfiler
         public static bool LogIds { get; set; }
         public static bool LogData { get; set; }
         public static string Session { get; private set; }
-        public static DirectoryInfo _logDataTo;
+        private static DirectoryInfo _logDataTo;
         public static DirectoryInfo LogDataTo { 
             get { return _logDataTo; }
             set 

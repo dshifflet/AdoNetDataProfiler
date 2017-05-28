@@ -1,31 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataProfiler
 {
     public static class RandomGenerator
     {
-        private static readonly Random getrandom = new Random();
-        private static readonly object syncLock = new object();
+        private static readonly Random GetRandom = new Random();
+        private static readonly object SyncLock = new object();
         public static int GetRandomNumber(int min, int max)
         {
-            lock (syncLock)
+            lock (SyncLock)
             {
-                return getrandom.Next(min, max);
+                return GetRandom.Next(min, max);
             }
         }
 
         public static string GetRandomWord()
         {
-            return string.Format("{0}-{1}", _words[GetRandomNumber(0, _words.Length)],
-                _words[GetRandomNumber(0, _words.Length)]);
+            return string.Format("{0}-{1}", Words[GetRandomNumber(0, Words.Length)],
+                Words[GetRandomNumber(0, Words.Length)]);
         }
 
-        private static readonly string[] _words = new[]
-        {
+        private static readonly string[] Words = {
             "melted",
             "protective",
             "abnormal",

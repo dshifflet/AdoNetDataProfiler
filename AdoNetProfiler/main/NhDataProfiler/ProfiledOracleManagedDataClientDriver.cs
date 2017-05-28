@@ -53,9 +53,10 @@ namespace NhDataProfiler
         
         protected override void OnBeforePrepare(IDbCommand command)
         {
-            if (command is ProfiledDbCommand)
+            var dbCommand = command as ProfiledDbCommand;
+            if (dbCommand != null)
             {
-                var cmd = (ProfiledDbCommand) command;
+                var cmd = dbCommand;
 
                 base.OnBeforePrepare(cmd.Command);
                 // need to explicitly turn on named parameter binding

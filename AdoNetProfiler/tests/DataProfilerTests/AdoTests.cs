@@ -14,6 +14,7 @@ namespace DataProfilerTests
     [TestClass]
     public class AdoTests
     {
+        // ReSharper disable once UnusedMember.Local
         private static readonly ILog Log = LogManager.GetLogger("AdoTests");
 
         [TestMethod]

@@ -4,7 +4,6 @@ using System.Configuration;
 using log4net;
 using log4net.Config;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Dialect;
 using NHibernate.Util;
@@ -22,8 +21,10 @@ namespace NHibernateTests
     [TestClass]
     public class NhibernateTests
     {
+        // ReSharper disable once UnusedMember.Local
         private static readonly ILog Log = LogManager.GetLogger("NHibernateTests");
-        private Configuration _nhConfig;
+
+        private readonly Configuration _nhConfig;
         public NhibernateTests()
         {
             ProfiledConfiguration.LogData = true;
@@ -60,7 +61,9 @@ namespace NHibernateTests
             using (var tx = session.BeginTransaction())
             {
                 var test = session.QueryOver<Customer>().Where(o => o.Id == 4).List();
+                tx.Commit();
                 Assert.IsTrue(test.Any());
+                
             }
             DoesProfiledDataExist();
         }
