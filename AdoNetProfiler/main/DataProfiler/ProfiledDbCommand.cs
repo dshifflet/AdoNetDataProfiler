@@ -8,7 +8,7 @@ namespace DataProfiler
     public class ProfiledDbCommand : DbCommand
     {
         public DbCommand Command { get; private set; }
-        private static readonly ILog Log = LogManager.GetLogger("DataProfiler");
+        private static readonly ILog Log = LogManager.GetLogger("ProfiledDbCommand");
 
 
         public ProfiledDbCommand(DbCommand command)
@@ -39,7 +39,7 @@ namespace DataProfiler
 
         public override int ExecuteNonQuery()
         {
-            DataLogger.LogSql(Command, Log);
+            ProfiledDataLogger.LogSql(Command, Log);
             var affected = Command.ExecuteNonQuery();            
             Log.DebugFormat("{0} rows affected", affected);
             return affected;
@@ -47,26 +47,26 @@ namespace DataProfiler
 
         public new IDataReader ExecuteReader()
         {
-            DataLogger.LogSql(Command, Log);
-            return LogReader(Command.ExecuteReader(), Guid.NewGuid());
+            ProfiledDataLogger.LogSql(Command, Log);
+            return LogReader(Command.ExecuteReader(), Guid.NewGuid(), Command);
         }
 
         public new IDataReader ExecuteReader(CommandBehavior behavior)
         {
-            DataLogger.LogSql(Command, Log);
-            return LogReader(Command.ExecuteReader(behavior), Guid.NewGuid());
+            ProfiledDataLogger.LogSql(Command, Log);
+            return LogReader(Command.ExecuteReader(behavior), Guid.NewGuid(), Command);
         }
 
-        private IDataReader LogReader(IDataReader reader, Guid guid)
+        private IDataReader LogReader(IDataReader reader, Guid guid, IDbCommand command)
         {
-            return DataLogger.LogIdsFromReader(
-                DataLogger.LogReader(reader, Command, guid, Log, ProfiledConfiguration.Session, ProfiledConfiguration.LogDataTo, ProfiledConfiguration.LogData)
-                , guid, Log, ProfiledConfiguration.Session, ProfiledConfiguration.LogDataTo, ProfiledConfiguration.LogData);            
+            return ProfiledDataLogger.LogIdsFromReader(
+                ProfiledDataLogger.LogReader(reader, Command, guid, Log, ProfiledConfiguration.Session, ProfiledConfiguration.LogDataTo, ProfiledConfiguration.LogData)
+                , guid, Log, ProfiledConfiguration.Session, ProfiledConfiguration.LogDataTo, ProfiledConfiguration.LogData, command);            
         }
 
         public override object ExecuteScalar()
         {
-            DataLogger.LogSql(Command, Log);
+            ProfiledDataLogger.LogSql(Command, Log);
             return Command.ExecuteScalar();
         }
         
@@ -119,9 +119,9 @@ namespace DataProfiler
         protected override DbDataReader ExecuteDbDataReader(CommandBehavior behavior)
         {
             
-            DataLogger.LogSql(Command, Log);
+            ProfiledDataLogger.LogSql(Command, Log);
             var reader = Command.ExecuteReader(behavior);
-            return (DbDataReader) LogReader(reader, Guid.NewGuid());            
+            return (DbDataReader) LogReader(reader, Guid.NewGuid(), Command);            
         }
 
         protected override DbConnection DbConnection {

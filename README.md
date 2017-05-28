@@ -1,5 +1,5 @@
 # AdoNetDataProfiler
-DbCommand Profiler for ADO.NET (Stores Ids returned and Data and logs activity via Log4Net)
+DbCommand Profiler for ADO.NET (Stores Ids returned, Data and logs activity via Log4Net)
 
 ## What This Does
 * Will log all SQL and Parameters to Log4Net and some DB activity.

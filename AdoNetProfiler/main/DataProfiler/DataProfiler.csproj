@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLogger.cs" />
+    <Compile Include="ProfiledDataLogger.cs" />
     <Compile Include="ProfiledConfiguration.cs" />
     <Compile Include="ProfiledConnection.cs" />
     <Compile Include="ProfiledDbCommand.cs">

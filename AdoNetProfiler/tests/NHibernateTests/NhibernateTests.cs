@@ -37,8 +37,6 @@ namespace NHibernateTests
         public void CanExecuteNhSqlQuery()
         {
             Console.WriteLine("Using {0}", ProfiledConfiguration.Session);
-
-            /* Create a session and execute a query: */
             using (var factory = _nhConfig.BuildSessionFactory())
             using (var session = factory.OpenSession())
             using (var tx = session.BeginTransaction())
@@ -62,8 +60,7 @@ namespace NHibernateTests
             {
                 var test = session.QueryOver<Customer>().Where(o => o.Id == 4).List();
                 tx.Commit();
-                Assert.IsTrue(test.Any());
-                
+                Assert.IsTrue(test.Any());                
             }
             DoesProfiledDataExist();
         }

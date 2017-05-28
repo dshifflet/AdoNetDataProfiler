@@ -1,3 +1,5 @@
+--http://www.geeksengine.com/article/northwind-oracle-2.html
+
 CREATE TABLE CATEGORIES
 (
     CATEGORY_ID NUMBER(9) NOT NULL,
