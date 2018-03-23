@@ -199,5 +199,13 @@ FakesAssemblies/
 *.orig
 *.GhostDoc.xml
 
-#connection strings
+# connection strings
 *connectionStrings.config
+
+# vs settings
+*/sqlite3/db.lock
+*/sqlite3/storage.ide
+*/sqlite3/storage.ide-wal
+*/sqlite3/storage.ide-shm
+*/.vs/*
+.vs/*
